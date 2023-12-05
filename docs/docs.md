@@ -308,338 +308,56 @@ svgManager.createFromTemplate('myFillPattern', 'anchor-fill', 'navy', 'rgba(0,15
 
 ## List of image templates
 
-In total there are 42 image templates provided: 27 symbol icons and 15 polygon fill patterns. This table lists all image templates currently available within the `SvgTemplateManager`. The template name is above each image. By default, the primary color is blue and the secondary color is white. To make the secondary color easier to see on a white background, the following images have the secondary color set to black.
+In total there are 42 image templates provided: 27 symbol icons and 15 polygon fill patterns. This table lists all image templates currently available within the `SvgTemplateManager`. By default, the primary color is blue and the secondary color is white. To make the secondary color easier to see on a white background, the following images have the secondary color set to black for documentation purposes.
 
 **Symbol icon templates**
 
-:::row:::
-   :::column span="":::
-      marker
-   :::column-end:::
-   :::column span="":::
-      marker-thick
-   :::column-end:::
-   :::column span="":::
-      marker-circle
-   :::column-end:::
-   :::column span="":::
-      marker-flat
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column span="":::
-      ![marker icon](./media/image-templates/marker.png)
-   :::column-end:::
-   :::column span="":::
-      ![marker-thick icon](./media/image-templates/marker-thick.png)
-   :::column-end:::
-   :::column span="":::
-      ![marker-circle icon](./media/image-templates/marker-circle.png)
-   :::column-end:::
-   :::column span="":::
-      ![marker-flat icon](./media/image-templates/marker-flat.png)
-   :::column-end:::
-:::row-end:::
-<br>
-
-:::row:::
-   :::column span="":::
-      marker-square
-   :::column-end:::
-   :::column span="":::
-      marker-square-cluster
-   :::column-end:::
-   :::column span="":::
-      marker-arrow
-   :::column-end:::
-   :::column span="":::
-      marker-ball-pin
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column span="":::
-      ![marker-square icon](./media/image-templates/marker-square.png)
-   :::column-end:::
-   :::column span="":::
-      ![marker-square-cluster icon](./media/image-templates/marker-square-cluster.png)
-   :::column-end:::
-   :::column span="":::
-      ![marker-arrow icon](./media/image-templates/marker-arrow.png)
-   :::column-end:::
-   :::column span="":::
-      ![marker-ball-pin icon](./media/image-templates/marker-ball-pin.png)
-   :::column-end:::
-:::row-end:::
-<br>
-
-:::row:::
-   :::column span="":::
-      marker-square-rounded
-   :::column-end:::
-   :::column span="":::
-      marker-square-rounded-cluster
-   :::column-end:::
-   :::column span="":::
-      flag
-   :::column-end:::
-   :::column span="":::
-      flag-triangle
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column span="":::
-      ![marker-square-rounded icon](./media/image-templates/marker-square-rounded.png)
-   :::column-end:::
-   :::column span="":::
-      ![marker-square-rounded-cluster icon](./media/image-templates/marker-square-rounded-cluster.png)
-   :::column-end:::
-   :::column span="":::
-      ![flag icon](./media/image-templates/flag.png)
-   :::column-end:::
-   :::column span="":::
-      ![flag-triangle icon](./media/image-templates/flag-triangle.png)
-   :::column-end:::
-:::row-end:::
-<br>
-
-:::row:::
-   :::column span="":::
-      triangle
-   :::column-end:::
-   :::column span="":::
-      triangle-thick
-   :::column-end:::
-   :::column span="":::
-      triangle-arrow-up
-   :::column-end:::
-   :::column span="":::
-      triangle-arrow-left
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column span="":::
-      ![triangle icon](./media/image-templates/triangle.png)
-   :::column-end:::
-   :::column span="":::
-      ![triangle-thick icon](./media/image-templates/triangle-thick.png)
-   :::column-end:::
-   :::column span="":::
-      ![triangle-arrow-up icon](./media/image-templates/triangle-arrow-up.png)
-   :::column-end:::
-   :::column span="":::
-      ![triangle-arrow-left icon](./media/image-templates/triangle-arrow-left.png)
-   :::column-end:::
-:::row-end:::
-<br>
-
-:::row:::
-   :::column span="":::
-      hexagon
-   :::column-end:::
-   :::column span="":::
-      hexagon-thick
-   :::column-end:::
-   :::column span="":::
-      hexagon-rounded
-   :::column-end:::
-   :::column span="":::
-      hexagon-rounded-thick
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column span="":::
-      ![hexagon icon](./media/image-templates/hexagon.png)
-   :::column-end:::
-   :::column span="":::
-      ![hexagon-thick icon](./media/image-templates/hexagon-thick.png)
-   :::column-end:::
-   :::column span="":::
-      ![hexagon-rounded icon](./media/image-templates/hexagon-rounded.png)
-   :::column-end:::
-   :::column span="":::
-      ![hexagon-rounded-thick icon](./media/image-templates/hexagon-rounded-thick.png)
-   :::column-end:::
-:::row-end:::
-<br>
-
-:::row:::
-   :::column span="":::
-      pin
-   :::column-end:::
-   :::column span="":::
-      pin-round
-   :::column-end:::
-   :::column span="":::
-      rounded-square
-   :::column-end:::
-   :::column span="":::
-      rounded-square-thick
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column span="":::
-      ![pin icon](./media/image-templates/pin.png)
-   :::column-end:::
-   :::column span="":::
-      ![pin-round icon](./media/image-templates/pin-round.png)
-   :::column-end:::
-   :::column span="":::
-      ![rounded-square icon](./media/image-templates/rounded-square.png)
-   :::column-end:::
-   :::column span="":::
-      ![rounded-square-thick icon](./media/image-templates/rounded-square-thick.png)
-   :::column-end:::
-:::row-end:::
-<br>
-
-:::row:::
-   :::column span="":::
-      arrow-up
-   :::column-end:::
-   :::column span="":::
-      arrow-up-thin
-   :::column-end:::
-   :::column span="":::
-      car
-   :::column-end:::
-   :::column span="":::
-      &nbsp;
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column span="":::
-      ![arrow-up icon](./media/image-templates/arrow-up.png)
-   :::column-end:::
-   :::column span="":::
-      ![arrow-up-thin icon](./media/image-templates/arrow-up-thin.png)
-   :::column-end:::
-   :::column span="":::
-      ![car icon](./media/image-templates/car.png)
-   :::column-end:::
-   :::column span="":::
-      &nbsp;
-   :::column-end:::
-:::row-end:::
+| Template name | Template |
+|---------------|----------|
+| `marker` | [marker](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/marker.png) |
+| `marker-thick` | [marker-thick](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/marker-thick.png) |
+| `marker-circle` | [marker-circle](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/marker-circle.png) |
+| `pin` | [pin](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/pin.png) |
+| `pin-round` | [pin-round](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/pin-round.png) |
+| `marker-flat` | [marker-flat](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/marker-flat.png) |
+| `marker-arrow` | [marker-arrow](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/marker-arrow.png) |
+| `marker-ball-pin` | [marker-ball-pin](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/marker-ball-pin.png) |
+| `marker-square` | [marker-square](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/marker-square.png) |
+| `marker-square-cluster` | [marker-square-cluster](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/marker-square-cluster.png) |
+| `marker-square-rounded` | [marker-square-rounded](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/marker-square-rounded.png) |
+| `marker-square-rounded-cluster` | [marker-square-rounded-cluster](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/marker-square-rounded-cluster.png) |
+| `flag` | [flag](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/flag.png) |
+| `flag-triangle` | [flag-triangle](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/flag-triangle.png) |
+| `rounded-square` | [rounded-square](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/rounded-square.png) |
+| `rounded-square-thick` | [rounded-square-thick](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/rounded-square-thick.png) |
+| `triangle` | [triangle](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/triangle.png) |
+| `triangle-thick` | [triangle-thick](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/triangle-thick.png) |
+| `hexagon` | [hexagon](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/hexagon.png) |
+| `hexagon-thick` | [hexagon-thick](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/hexagon-thick.png) |
+| `hexagon-rounded` | [hexagon-rounded](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/hexagon-rounded.png) |
+| `hexagon-rounded-thick` | [hexagon-rounded-thick](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/hexagon-rounded-thick.png) |
+| `triangle-arrow-up` | [triangle-arrow-up](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/triangle-arrow-up.png) |
+| `triangle-arrow-left` | [triangle-arrow-left](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/triangle-arrow-left.png) |
+| `arrow-up` | [arrow-up](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/arrow-up.png) |
+| `arrow-up-thin` | [arrow-up-thin](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/arrow-up-thin.png) |
+| `car` | [car](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/car.png) |
 
 **Polygon fill pattern templates**
 
-:::row:::
-   :::column span="":::
-      checker
-   :::column-end:::
-   :::column span="":::
-      checker-rotated
-   :::column-end:::
-   :::column span="":::
-      circles
-   :::column-end:::
-   :::column span="":::
-      circles-spaced
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column span="":::
-      ![checker icon](./media/image-templates/checker.png)
-   :::column-end:::
-   :::column span="":::
-      ![checker-rotated icon](./media/image-templates/checker-rotated.png)
-   :::column-end:::
-   :::column span="":::
-      ![circles icon](./media/image-templates/circles.png)
-   :::column-end:::
-   :::column span="":::
-      ![circles-spaced icon](./media/image-templates/circles-spaced.png)
-   :::column-end:::
-:::row-end:::
-<br>
-
-:::row:::
-   :::column span="":::
-      diagonal-lines-up
-   :::column-end:::
-   :::column span="":::
-      diagonal-lines-down
-   :::column-end:::
-   :::column span="":::
-      diagonal-stripes-up
-   :::column-end:::
-   :::column span="":::
-      diagonal-stripes-down
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column span="":::
-      ![diagonal-lines-up icon](./media/image-templates/diagonal-lines-up.png)
-   :::column-end:::
-   :::column span="":::
-      ![diagonal-lines-down icon](./media/image-templates/diagonal-lines-down.png)
-   :::column-end:::
-   :::column span="":::
-      ![diagonal-stripes-up icon](./media/image-templates/diagonal-stripes-up.png)
-   :::column-end:::
-   :::column span="":::
-      ![diagonal-stripes-down icon](./media/image-templates/diagonal-stripes-down.png)
-   :::column-end:::
-:::row-end:::
-<br>
-
-:::row:::
-   :::column span="":::
-      grid-lines
-   :::column-end:::
-   :::column span="":::
-      rotated-grid-lines
-   :::column-end:::
-   :::column span="":::
-      rotated-grid-stripes
-   :::column-end:::
-   :::column span="":::
-      x-fill
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column span="":::
-      ![grid-lines icon](./media/image-templates/grid-lines.png)
-   :::column-end:::
-   :::column span="":::
-      ![rotated-grid-lines icon](./media/image-templates/rotated-grid-lines.png)
-   :::column-end:::
-   :::column span="":::
-      ![rotated-grid-stripes icon](./media/image-templates/rotated-grid-stripes.png)
-   :::column-end:::
-   :::column span="":::
-      ![x-fill icon](./media/image-templates/x-fill.png)
-   :::column-end:::
-:::row-end:::
-<br>
-
-:::row:::
-   :::column span="":::
-      zig-zag
-   :::column-end:::
-   :::column span="":::
-      zig-zag-vertical
-   :::column-end:::
-   :::column span="":::
-      dots
-   :::column-end:::
-   :::column span="":::
-      &nbsp;
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column span="":::
-      ![zig-zag icon](./media/image-templates/zig-zag.png)
-   :::column-end:::
-   :::column span="":::
-      ![zig-zag-vertical icon](./media/image-templates/zig-zag-vertical.png)
-   :::column-end:::
-   :::column span="":::
-      ![dots icon](./media/image-templates/dots.png)
-   :::column-end:::
-   :::column span="":::
-      &nbsp;
-   :::column-end:::
-:::row-end:::
-<br>
-
+| Template name | Template |
+|---------------|----------|
+| `checker` | [checker](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/checker.png) |
+| `checker-rotated` | [checker-rotated](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/checker-rotated.png) |
+| `zig-zag` | [zig-zag](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/zig-zag.png) |
+| `zig-zag-vertical` | [zig-zag-vertical](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/zig-zag-vertical.png) |
+| `circles-spaced` | [circles-spaced](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/circles-spaced.png) |
+| `circles` | [circles](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/circles.png) |
+| `diagonal-lines-up` | [diagonal-lines-up](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/diagonal-lines-up.png) |
+| `diagonal-lines-down` | [diagonal-lines-down](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/diagonal-lines-down.png) |
+| `diagonal-stripes-up` | [diagonal-stripes-up](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/diagonal-stripes-up.png) |
+| `diagonal-stripes-down` | [diagonal-stripes-down](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/diagonal-stripes-down.png) |
+| `grid-lines` | [grid-lines](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/grid-lines.png) |
+| `rotated-grid-lines` | [rotated-grid-lines](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/rotated-grid-lines.png) |
+| `rotated-grid-stripes` | [rotated-grid-stripes](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/rotated-grid-stripes.png) |
+| `x-fill` | [x-fill](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/x-fill.png) |
+| `dots` | [dots](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/dots.png) |

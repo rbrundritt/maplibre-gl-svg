@@ -194,6 +194,8 @@ SOFTWARE.
          * Adds an SVG image to the maps image sprite.
          * @param id A unique ID to reference the image by. Use this to render this image in your layers. If the specified id matches the ID of a previously added image the new image will be ignored.
          * @param svg An inline SVG string, or URL to an SVG image.
+         * @param maxWidth The maximum width to allow the image to be. If the image exceeds this width it will be scaled down to fit. Default: 100
+         * @param maxHeight The maximum height to allow the image to be. If the image exceeds this height it will be scaled down to fit. Default: 100
          */
         SvgManager.prototype.add = function (id, svg, maxWidth, maxHeight) {
             var _this = this;
@@ -230,10 +232,13 @@ SOFTWARE.
                         var imageElm = new Image();
                         // Wait for the blob to load into the element.
                         imageElm.onload = function () {
-                            if (maxWidth > 0 || maxHeight > 0) {
+                            //Scale the image if it exceeds the max size.
+                            if (maxWidth > 0 && maxHeight > 0 && (imageElm.width > maxWidth || imageElm.height > maxHeight)) {
                                 var scale = Math.min(maxWidth / imageElm.width, maxHeight / imageElm.height);
-                                imageElm.width = imageElm.width * scale;
-                                imageElm.height = imageElm.height * scale;
+                                if (scale < 1) {
+                                    imageElm.width = imageElm.width * scale;
+                                    imageElm.height = imageElm.height * scale;
+                                }
                             }
                             map.addImage(id, imageElm);
                             images[id] = imageSrc_1;

@@ -81,8 +81,11 @@ export class SvgManager {
                         //Scale the image if it exceeds the max size.
                         if(maxWidth > 0 && maxHeight > 0 && (imageElm.width > maxWidth || imageElm.height > maxHeight)) {
                             const scale = Math.min(maxWidth / imageElm.width, maxHeight / imageElm.height);
-                            imageElm.width = imageElm.width * scale;
-                            imageElm.height = imageElm.height * scale;
+
+                            if(scale < 1){
+                                imageElm.width = imageElm.width * scale;
+                                imageElm.height = imageElm.height * scale;
+                            }
                         }
 
                         map.addImage(id, imageElm);
