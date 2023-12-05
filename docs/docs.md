@@ -23,7 +23,7 @@ The `SvgManager` class provides the following functions.
 
 | Name | Return Type | Description |
 |------|-------------|-------------|
-| `add(id: string, svg: string)` | `Promise<void>` | Adds an SVG image to the maps image sprite. |
+| `add(id: string, svg: string)` | `Promise<void>` | Adds an SVG image to the maps image sprite. The SVG can be either a URL to an SVG file, an inline SVG string, or SVG data URI. |
 | `clear()` | | Removes all SVG images loaded into the maps sprite. |
 | `getImageIds()`| `string[]` | Gets a list of all the image ids that have been added to the maps image sprite. |
 | `hasImage(id: string)` | `boolean` | Checks to see if an image is already loaded into the maps image sprite. |
