@@ -1,11 +1,3 @@
----
-page_type: sample
-description: A maplibre-gl-js plugin that adds support for loading SVGs and SVG templates as images into the maps image sprite.
-languages:
-- javascript
-- typescript
----
-
 # MapLibre GL SVG Plugin
 
 > Status: New plugin, still being validated. 
