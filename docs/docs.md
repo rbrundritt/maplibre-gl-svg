@@ -6,6 +6,8 @@ Images can be used with HTML markers and various layers within MapLibre:
 - Polygon/Fill layers can be rendered with a fill pattern image.
 - HTML markers can render points using images and other HTML elements.
 
+Be sure to check out the [examples page](https://rbrundritt.github.io/maplibre-gl-svg/index.html).
+
 ## Getting started
 
 Download the project and copy the `maplibre-gl-svg` JavaScript file from the `dist` folder into your project.

@@ -12,7 +12,7 @@ languages:
 
 A [maplibre-gl-js](https://maplibre.org/maplibre-gl-js/docs/) plugin that adds support for loading SVGs images into the maps image sprite.
 
-- [Go to the examples page](https://github.io/rbrundritt/maplibre-gl-svg/index.html)
+- [Go to the examples page](https://rbrundritt.github.io/maplibre-gl-svg/index.html)
 - [Read the docs](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/docs/docs.md)
 
 **Features:**
