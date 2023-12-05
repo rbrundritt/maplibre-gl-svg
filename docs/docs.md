@@ -314,50 +314,52 @@ In total there are 42 image templates provided: 27 symbol icons and 15 polygon f
 
 | Template name | Template |
 |---------------|----------|
-| `marker` | [marker](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/marker.png) |
-| `marker-thick` | [marker-thick](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/marker-thick.png) |
-| `marker-circle` | [marker-circle](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/marker-circle.png) |
-| `pin` | [pin](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/pin.png) |
-| `pin-round` | [pin-round](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/pin-round.png) |
-| `marker-flat` | [marker-flat](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/marker-flat.png) |
-| `marker-arrow` | [marker-arrow](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/marker-arrow.png) |
-| `marker-ball-pin` | [marker-ball-pin](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/marker-ball-pin.png) |
-| `marker-square` | [marker-square](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/marker-square.png) |
-| `marker-square-cluster` | [marker-square-cluster](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/marker-square-cluster.png) |
-| `marker-square-rounded` | [marker-square-rounded](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/marker-square-rounded.png) |
-| `marker-square-rounded-cluster` | [marker-square-rounded-cluster](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/marker-square-rounded-cluster.png) |
-| `flag` | [flag](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/flag.png) |
-| `flag-triangle` | [flag-triangle](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/flag-triangle.png) |
-| `rounded-square` | [rounded-square](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/rounded-square.png) |
-| `rounded-square-thick` | [rounded-square-thick](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/rounded-square-thick.png) |
-| `triangle` | [triangle](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/triangle.png) |
-| `triangle-thick` | [triangle-thick](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/triangle-thick.png) |
-| `hexagon` | [hexagon](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/hexagon.png) |
-| `hexagon-thick` | [hexagon-thick](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/hexagon-thick.png) |
-| `hexagon-rounded` | [hexagon-rounded](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/hexagon-rounded.png) |
-| `hexagon-rounded-thick` | [hexagon-rounded-thick](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/hexagon-rounded-thick.png) |
-| `triangle-arrow-up` | [triangle-arrow-up](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/triangle-arrow-up.png) |
-| `triangle-arrow-left` | [triangle-arrow-left](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/triangle-arrow-left.png) |
-| `arrow-up` | [arrow-up](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/arrow-up.png) |
-| `arrow-up-thin` | [arrow-up-thin](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/arrow-up-thin.png) |
-| `car` | [car](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/car.png) |
+| `marker` | ![marker](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/marker.png) |
+| `marker-thick` | ![marker-thick](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/marker-thick.png) |
+| `marker-circle` | ![marker-circle](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/marker-circle.png) |
+| `pin` | ![pin](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/pin.png) |
+| `pin-round` | ![pin-round](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/pin-round.png) |
+| `marker-flat` | ![marker-flat](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/marker-flat.png) |
+| `marker-arrow` | ![marker-arrow](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/marker-arrow.png) |
+| `marker-ball-pin` | ![marker-ball-pin](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/marker-ball-pin.png) |
+| `marker-square` | ![marker-square](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/marker-square.png) |
+| `marker-square-cluster` | ![marker-square-cluster](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/marker-square-cluster.png) |
+| `marker-square-rounded` | ![marker-square-rounded](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/marker-square-rounded.png) |
+| `marker-square-rounded-cluster` | ![marker-square-rounded-cluster](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/marker-square-rounded-cluster.png) |
+| `flag` | ![flag](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/flag.png) |
+| `flag-triangle` | ![flag-triangle](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/flag-triangle.png) |
+| `rounded-square` | ![rounded-square](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/rounded-square.png) |
+| `rounded-square-thick` | ![rounded-square-thick](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/rounded-square-thick.png) |
+| `triangle` | ![triangle](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/triangle.png) |
+| `triangle-thick` | ![triangle-thick](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/triangle-thick.png) |
+| `hexagon` | ![hexagon](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/hexagon.png) |
+| `hexagon-thick` | ![hexagon-thick](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/hexagon-thick.png) |
+| `hexagon-rounded` | ![hexagon-rounded](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/hexagon-rounded.png) |
+| `hexagon-rounded-thick` | ![hexagon-rounded-thick](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/hexagon-rounded-thick.png) |
+| `triangle-arrow-up` | ![triangle-arrow-up](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/triangle-arrow-up.png) |
+| `triangle-arrow-left` | ![triangle-arrow-left](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/triangle-arrow-left.png) |
+| `arrow-up` | ![arrow-up](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/arrow-up.png) |
+| `arrow-up-thin` | ![arrow-up-thin](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/arrow-up-thin.png) |
+| `car` | ![car](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/car.png) |
+
 
 **Polygon fill pattern templates**
 
 | Template name | Template |
 |---------------|----------|
-| `checker` | [checker](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/checker.png) |
-| `checker-rotated` | [checker-rotated](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/checker-rotated.png) |
-| `zig-zag` | [zig-zag](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/zig-zag.png) |
-| `zig-zag-vertical` | [zig-zag-vertical](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/zig-zag-vertical.png) |
-| `circles-spaced` | [circles-spaced](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/circles-spaced.png) |
-| `circles` | [circles](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/circles.png) |
-| `diagonal-lines-up` | [diagonal-lines-up](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/diagonal-lines-up.png) |
-| `diagonal-lines-down` | [diagonal-lines-down](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/diagonal-lines-down.png) |
-| `diagonal-stripes-up` | [diagonal-stripes-up](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/diagonal-stripes-up.png) |
-| `diagonal-stripes-down` | [diagonal-stripes-down](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/diagonal-stripes-down.png) |
-| `grid-lines` | [grid-lines](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/grid-lines.png) |
-| `rotated-grid-lines` | [rotated-grid-lines](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/rotated-grid-lines.png) |
-| `rotated-grid-stripes` | [rotated-grid-stripes](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/rotated-grid-stripes.png) |
-| `x-fill` | [x-fill](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/x-fill.png) |
-| `dots` | [dots](https://github.com/rbrundritt/maplibre-gl-svg/blob/main/assets/image-templates/dots.png) |
+| `checker` | ![checker](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/checker.png) |
+| `checker-rotated` | ![checker-rotated](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/checker-rotated.png) |
+| `zig-zag` | ![zig-zag](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/zig-zag.png) |
+| `zig-zag-vertical` | ![zig-zag-vertical](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/zig-zag-vertical.png) |
+| `circles-spaced` | ![circles-spaced](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/circles-spaced.png) |
+| `circles` | ![circles](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/circles.png) |
+| `diagonal-lines-up` | ![diagonal-lines-up](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/diagonal-lines-up.png) |
+| `diagonal-lines-down` | ![diagonal-lines-down](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/diagonal-lines-down.png) |
+| `diagonal-stripes-up` | ![diagonal-stripes-up](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/diagonal-stripes-up.png) |
+| `diagonal-stripes-down` | ![diagonal-stripes-down](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/diagonal-stripes-down.png) |
+| `grid-lines` | ![grid-lines](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/grid-lines.png) |
+| `rotated-grid-lines` | ![rotated-grid-lines](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/rotated-grid-lines.png) |
+| `rotated-grid-stripes` | ![rotated-grid-stripes](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/rotated-grid-stripes.png) |
+| `x-fill` | ![x-fill](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/x-fill.png) |
+| `dots` | ![dots](https://raw.githubusercontent.com/rbrundritt/maplibre-gl-svg/main/assets/image-templates/dots.png) |
+
