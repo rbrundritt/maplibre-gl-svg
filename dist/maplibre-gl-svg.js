@@ -33,7 +33,7 @@ SOFTWARE.
          * Public functions
          ***********************/
         /**
-         * Adds an image template to the atlas namespace.
+         * Adds an image template to the SvgTemplateManager.
          * @param templateName The name of the template.
          * @param template The SVG template to add. Supports `{color}`, `{secondaryColor}`, `{scale}`, and `{text}`
          * @param override Specifies if it should override existing templates if one with the same name already exists.
@@ -191,12 +191,14 @@ SOFTWARE.
          * Public functions
          ***********************/
         /**
-         *
+         * Adds an SVG image to the maps image sprite.
          * @param id A unique ID to reference the image by. Use this to render this image in your layers. If the specified id matches the ID of a previously added image the new image will be ignored.
          * @param svg An inline SVG string, or URL to an SVG image.
          */
-        SvgManager.prototype.add = function (id, svg) {
+        SvgManager.prototype.add = function (id, svg, maxWidth, maxHeight) {
             var _this = this;
+            if (maxWidth === void 0) { maxWidth = 100; }
+            if (maxHeight === void 0) { maxHeight = 100; }
             return new Promise(function (resolve, reject) {
                 var images = _this._images;
                 var map = _this._map;
@@ -225,19 +227,24 @@ SOFTWARE.
                     fetch(request.url, request).then(function (response) {
                         return response.blob();
                     }).then(function (blob) {
-                        var imageEle = new Image();
+                        var imageElm = new Image();
                         // Wait for the blob to load into the element.
-                        imageEle.onload = function () {
-                            map.addImage(id, imageEle);
+                        imageElm.onload = function () {
+                            if (maxWidth > 0 || maxHeight > 0) {
+                                var scale = Math.min(maxWidth / imageElm.width, maxHeight / imageElm.height);
+                                imageElm.width = imageElm.width * scale;
+                                imageElm.height = imageElm.height * scale;
+                            }
+                            map.addImage(id, imageElm);
                             images[id] = imageSrc_1;
                             resolve();
                         };
                         // Reject if the blob failed to load in the element.
-                        imageEle.onerror = imageEle.onabort = function () {
+                        imageElm.onerror = imageElm.onabort = function () {
                             reject("Failed to load \"".concat(id, "\" image."));
                         };
                         // Convert the blob to a data url then load it into an Image element.
-                        imageEle.src = URL.createObjectURL(blob);
+                        imageElm.src = URL.createObjectURL(blob);
                     }).catch(function () {
                         reject("Failed to load \"".concat(id, "\" image."));
                     });
@@ -270,7 +277,7 @@ SOFTWARE.
         };
         /**
          * Creates and adds an image to the maps image sprite from an SVG template.
-         * Provide the name of the built-in template to use, and a color to apply.
+         * Provide the name of the built-in or pre-loaded template to use, and a color to apply.
          * Optionally, specify a secondary color if the template supports one.
          * A scale can also be specified.
          * This will allow the SVG to be scaled before being converted into an image and thus look much better when scaled up.
@@ -309,12 +316,12 @@ SOFTWARE.
                 //Verify map doesn't already have the image in the sprite.
                 if (!self._map.hasImage(id)) {
                     //Load the image source into an image element.
-                    var imageEle_1 = new Image();
-                    imageEle_1.onload = function () {
+                    var imageElm_1 = new Image();
+                    imageElm_1.onload = function () {
                         //Add the image to the map's image sprite.
-                        self._map.addImage(id, imageEle_1);
+                        self._map.addImage(id, imageElm_1);
                     };
-                    imageEle_1.src = _this._images[id];
+                    imageElm_1.src = _this._images[id];
                 }
             });
         };

@@ -22,8 +22,10 @@ export class SvgManager {
      * Adds an SVG image to the maps image sprite.
      * @param id A unique ID to reference the image by. Use this to render this image in your layers. If the specified id matches the ID of a previously added image the new image will be ignored.
      * @param svg An inline SVG string, or URL to an SVG image. 
+     * @param maxWidth The maximum width to allow the image to be. If the image exceeds this width it will be scaled down to fit. Default: 100
+     * @param maxHeight The maximum height to allow the image to be. If the image exceeds this height it will be scaled down to fit. Default: 100
      */
-    public add(id: string, svg: string): Promise<void>;
+    public add(id: string, svg: string, maxWidth: number, maxHeight: number): Promise<void>;
 
     /**
      * Removes all SVG images loaded into the maps sprite.

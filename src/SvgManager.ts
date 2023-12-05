@@ -1,5 +1,6 @@
 import type { Map, RequestParameters, ResourceType } from "maplibre-gl";
 import { SvgTemplateManager } from "./SvgTemplateManager";
+import { max } from "lodash";
 
 /**
  * A class that manages the lifecycle of SVG's for a map instance.
@@ -35,8 +36,10 @@ export class SvgManager {
      * Adds an SVG image to the maps image sprite.
      * @param id A unique ID to reference the image by. Use this to render this image in your layers. If the specified id matches the ID of a previously added image the new image will be ignored.
      * @param svg An inline SVG string, or URL to an SVG image. 
+     * @param maxWidth The maximum width to allow the image to be. If the image exceeds this width it will be scaled down to fit. Default: 100
+     * @param maxHeight The maximum height to allow the image to be. If the image exceeds this height it will be scaled down to fit. Default: 100
      */
-    public add(id: string, svg: string): Promise<void> {
+    public add(id: string, svg: string, maxWidth: number = 100, maxHeight: number = 100): Promise<void> {
         return new Promise((resolve, reject) => {
             const images = this._images;
             const map = this._map;
@@ -70,22 +73,30 @@ export class SvgManager {
                 fetch(request.url, request).then((response) => {
                     return response.blob();
                 }).then((blob) => {
-                    const imageEle = new Image();
+                    const imageElm = new Image();
 
                     // Wait for the blob to load into the element.
-                    imageEle.onload = () => {
-                        map.addImage(id, imageEle);
+                    imageElm.onload = () => {
+
+                        //Scale the image if it exceeds the max size.
+                        if(maxWidth > 0 && maxHeight > 0 && (imageElm.width > maxWidth || imageElm.height > maxHeight)) {
+                            const scale = Math.min(maxWidth / imageElm.width, maxHeight / imageElm.height);
+                            imageElm.width = imageElm.width * scale;
+                            imageElm.height = imageElm.height * scale;
+                        }
+
+                        map.addImage(id, imageElm);
                         images[id] = imageSrc;
                         resolve();
                     };
 
                     // Reject if the blob failed to load in the element.
-                    imageEle.onerror = imageEle.onabort = () => {
+                    imageElm.onerror = imageElm.onabort = () => {
                         reject(`Failed to load "${id}" image.`);
                     };
 
                     // Convert the blob to a data url then load it into an Image element.
-                    imageEle.src = URL.createObjectURL(blob);
+                    imageElm.src = URL.createObjectURL(blob);
                 }).catch(() => {
                     reject(`Failed to load "${id}" image.`);
                 });
@@ -160,12 +171,12 @@ export class SvgManager {
             //Verify map doesn't already have the image in the sprite.
             if (!self._map.hasImage(id)) {
                 //Load the image source into an image element.
-                const imageEle = new Image();
-                imageEle.onload = () => {
+                const imageElm = new Image();
+                imageElm.onload = () => {
                     //Add the image to the map's image sprite.
-                    self._map.addImage(id, imageEle);
+                    self._map.addImage(id, imageElm);
                 };
-                imageEle.src = this._images[id];
+                imageElm.src = this._images[id];
             }
         });
     }

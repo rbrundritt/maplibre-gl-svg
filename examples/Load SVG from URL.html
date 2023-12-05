@@ -60,6 +60,9 @@
         //Load an SVG templated icon into the map.
         svgManager.add('myTemplatedImage', '../assets/Smiley_face_changed.svg').then(() => {
 
+            //Optionally set the max width/height of the image.
+            //svgManager.add('myTemplatedImage', '../assets/Smiley_face_changed.svg', 30, 30).then(() => {
+
             //Add a layer to display a filled polygon.
             map.addLayer({
                 'id': 'symbol-layer',
