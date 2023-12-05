@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MapLibre GL SVG Plugin - Examples</title>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body { 
+            margin: 0; 
+            padding: 5px;
+            background-color: #dddddd;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            width: 250px;
+            margin:5px;
+            background-color: white;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+
+        .container {
+            padding: 2px 16px;
+        }
+
+        .card-container {
+            display:flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+    </style>
+</head>
+<body>
+    <h1>MapLibre GL SVG Plugin</h1>
+
+    This is a <a href="https://maplibre.org/maplibre-gl-js/docs/" target="_blank">maplibre-gl-js</a> plugin that adds support for loading SVGs images into the maps image sprite.
+    It also includes a framework for templatable SVG images.
+
+    <h2>Examples</h2>
+    Check out the examples below:
+    <br/>
+    <br/>
+    <div class="card-container">
+        <div class="card">
+            <img src="assets/SVG%20template%20options.jpg" style="width:100%">
+            <div class="container">
+                <h4><b>SVG template options</b></h4> 
+                <p>This sample shows how the icon template options effect the rendering of built-in SVG templates.</p> 
+                <a href="examples/SVG%20template%20options.html" target="_blank">Run example</a> | 
+                <a href=https://github.com/rbrundritt/maplibre-gl-svg/blob/main/examples/SVG%20template%20options.html" target="_blank">Source code</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="assets/Add%20custom%20SVG%20template%20to%20template%20manager.jpg" style="width:100%">
+            <div class="container">
+                <h4><b>Add custom SVG template to template manager</b></h4> 
+                <p>This sample shows how to add more image templates to the SVG template manager.</p> 
+                <a href="examples/Add%20custom%20SVG%20template%20to%20template%20manager.html" target="_blank">Run example</a> | 
+                <a href="https://github.com/rbrundritt/maplibre-gl-svg/blob/main/examples/Add%20custom%20SVG%20template%20to%20template%20manager.html" target="_blank">Source code</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="assets/All%20built-in%20SVG%20templates%20as%20HTML%20markers.jpg" style="width:100%">
+            <div class="container">
+                <h4><b>All built-in SVG templates as HTML markers</b></h4> 
+                <p>This sample shows all the built-in SVG templates rendered as HTML markers.</p> 
+                <a href="examples/All%20built-in%20SVG%20templates%20as%20HTML%20markers.html" target="_blank">Run example</a> | 
+                <a href="examples/All%20built-in%20SVG%20templates%20as%20HTML%20markers.html" target="_blank">Source code</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="assets/All%20built-in%20SVG%20templates%20as%20symbols.jpg" style="width:100%">
+            <div class="container">
+                <h4><b>All built-in SVG templates as symbols</b></h4> 
+                <p>This sample shows all the built-in icon templates rendered on a symbol layer.</p> 
+                <a href="examples/All%20built-in%20SVG%20templates%20as%20symbols.html" target="_blank">Run example</a> | 
+                <a href="examples/All%20built-in%20SVG%20templates%20as%20symbols.html" target="_blank">Source code</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="assets/Fill%20polygon%20with%20built-in%20SVG%20template.jpg" style="width:100%">
+            <div class="container">
+                <h4><b>Fill polygon with built-in SVG template</b></h4> 
+                <p>This sample shows how to use an SVG template as a fill pattern for a polygon.</p> 
+                <a href="examples/Fill%20polygon%20with%20built-in%20SVG%20template.html" target="_blank">Run example</a> | 
+                <a href="examples/Fill%20polygon%20with%20built-in%20SVG%20template.html" target="_blank">Source code</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="assets/HTML%20Marker%20with%20built-in%20SVG%20template.jpg" style="width:100%">
+            <div class="container">
+                <h4><b>HTML Marker with built-in SVG template</b></h4> 
+                <p> This sample shows how use SVG templates with an HTML marker, and how to update the marker with a new template. </p> 
+                <a href="examples/HTML%20Marker%20with%20built-in%20SVG%20template.html" target="_blank">Run example</a> | 
+                <a href="examples/HTML%20Marker%20with%20built-in%20SVG%20template.html" target="_blank">Source code</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="assets/HTML%20Marker%20with%20Custom%20SVG%20Template.jpg" style="width:100%">
+            <div class="container">
+                <h4><b>HTML Marker with Custom SVG Template</b></h4> 
+                <p>This sample shows how to create a custom SVG template and use it with the Html Marker class.</p> 
+                <a href="examples/HTML%20Marker%20with%20Custom%20SVG%20Template.html" target="_blank">Run example</a> | 
+                <a href="examples/HTML%20Marker%20with%20Custom%20SVG%20Template.html" target="_blank">Source code</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="assets/Line%20layer%20with%20built-in%20SVG%20template.jpg" style="width:100%">
+            <div class="container">
+                <h4><b>Line layer with built-in SVG template</b></h4> 
+                <p>This sample shows how to use a built-in SVG template with a line layer.</p> 
+                <a href="examples/Line%20layer%20with%20built-in%20SVG%20template.html" target="_blank">Run example</a> | 
+                <a href="examples/Line%20layer%20with%20built-in%20SVG%20template.html" target="_blank">Source code</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="assets/Symbol%20layer%20with%20built-in%20SVG%20template.jpg" style="width:100%">
+            <div class="container">
+                <h4><b>Symbol layer with built-in SVG template</b></h4> 
+                <p>This sample shows how to use an SVG template as an icon in a symbol layer.</p> 
+                <a href="examples/Symbol%20layer%20with%20built-in%20SVG%20template.html" target="_blank">Run example</a> | 
+                <a href="examples/Symbol%20layer%20with%20built-in%20SVG%20template.html" target="_blank">Source code</a>
+            </div>
+        </div>       
+    </div>    
+</body>
+</html>

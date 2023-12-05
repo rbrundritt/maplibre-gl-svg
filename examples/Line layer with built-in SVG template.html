@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Line layer with built-in SVG template</title>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css' />
+    <script src='https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js'></script>
+
+    <script src="../dist/maplibre-gl-svg.js"></script>
+
+    <style>
+        body { margin: 0; padding: 0; }
+        html, body { height: 100%; }
+        #map { position: relative; width:100%; height:100%; }
+        fieldset { position: absolute; top: 10px; left: 10px; width: 300px;z-index: 1; background-color: white;}
+        legend {background-color: white;border-radius: 5px;border:1px solid #000;}
+    </style>
+</head>
+<body>
+<div id="map"></div>
+
+<fieldset>
+    <legend>Line layer with built-in SVG template</legend>
+    This sample shows how to use a built-in SVG template with a line layer. 
+</fieldset>
+
+<script>
+    const center = [-74.5, 40];
+    var marker, svgManager;
+
+    const map = new maplibregl.Map({
+        container: 'map',
+        center: [-122.135, 47.65],
+        zoom: 12,
+        style: {
+            'version': 8,
+            'sources': {
+                'osm-tiles': {
+                    'type': 'raster',
+                    'tiles': [ 'https://tile.openstreetmap.org/{z}/{x}/{y}.png' ],
+                    'tileSize': 256,
+                    'attribution': '&copy; <a href="https://www.openstreetmap.org/about" target="_blank">OpenStreetMap</a>'
+                }
+            },
+            'layers': [
+                {
+                    'id': 'osm-tiles',
+                    'type': 'raster',
+                    'source': 'osm-tiles',
+                    'minzoom': 0,
+                    'maxzoom': 19
+                }
+            ]
+        }
+    });
+
+    map.on('load', () => {
+        //Create a new instance of the SVG manager.
+        svgManager = new maplibregl.SvgManager(map);
+
+        //Load an SVG templated icon into the map.
+        svgManager.createFromTemplate('myTemplatedImage', 'car', 'DodgerBlue', '#fff').then(() => {
+
+            //Add a source for thelines.
+            map.addSource('lines', {
+                'type': 'geojson',
+                'data': {
+                    'type': 'FeatureCollection',
+                    'features': [
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                            },
+                            'geometry': {
+                                'type': 'LineString',
+                                'coordinates': [
+                                    [-122.18822, 47.63208],
+                                    [-122.18204, 47.63196],
+                                    [-122.17243, 47.62976],
+                                    [-122.16419, 47.63023],
+                                    [-122.15852, 47.62942],
+                                    [-122.15183, 47.62988],
+                                    [-122.14256, 47.63451],
+                                    [-122.13483, 47.64041],
+                                    [-122.13466, 47.64422],
+                                    [-122.13844, 47.65440],
+                                    [-122.13277, 47.66515],
+                                    [-122.12779, 47.66712],
+                                    [-122.11595, 47.66712],
+                                    [-122.11063, 47.66735],
+                                    [-122.10668, 47.67035],
+                                    [-122.10565, 47.67498]
+                                ]
+                            }
+                        }
+                    ]
+                }
+            });
+
+            //Add a layer to display the lines.
+            map.addLayer({
+                'id': 'lines',
+                'type': 'line',
+                'source': 'lines',
+                'paint': {
+                    'line-width': 5,
+                    'line-color': 'Blue'
+                }
+            });
+
+            //Add a layer for symbols along the line.
+            map.addLayer({
+                'id': 'line-symbols',
+                'type': 'symbol',
+                'source': 'lines',
+                'layout': {            
+                    //Reference the templated icon.        
+                    'icon-image': 'myTemplatedImage',
+                    'symbol-placement': 'line',
+                    'symbol-spacing': 100,
+                    'icon-rotate': 90
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

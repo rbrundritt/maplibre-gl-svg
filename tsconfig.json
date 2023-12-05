@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+        "outDir": "js",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "importHelpers": true,
+        "alwaysStrict": true,
+        "target": "es5",
+        "baseUrl": "./",
+        "skipLibCheck": true,
+        "lib": [
+            "dom",
+            "es5",
+            "es2015",
+            "es2017.object"
+        ],
+        "declaration": true,
+        "declarationDir": "./js/typings",
+        "typeRoots": [ "./types", "./node_modules/@types"]
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "typings",
+        "types"
+    ]
+}

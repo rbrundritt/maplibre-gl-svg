@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HTML Marker with built-in SVG template</title>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css' />
+    <script src='https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js'></script>
+
+    <script src="../dist/maplibre-gl-svg.js"></script>
+
+    <style>
+        body { margin: 0; padding: 0; }
+        html, body { height: 100%; }
+        #map { position: relative; width:100%; height:100%; }
+        fieldset { position: absolute; top: 10px; left: 10px; width: 300px;z-index: 1; background-color: white;}
+        legend {background-color: white;border-radius: 5px;border:1px solid #000;}
+    </style>
+</head>
+<body>
+<div id="map"></div>
+
+<fieldset>
+    <legend>HTML Marker with built-in SVG template</legend>
+    This sample shows how use SVG templates with an HTML marker, and how to update the marker with a new template.    
+    <br/><br/>
+    <input type="button" value="Update marker color" onclick="updateMarker()">
+</fieldset>
+
+<script>
+    const center = [-74.5, 40];
+    var marker;
+
+    const map = new maplibregl.Map({
+        container: 'map',
+        style: {
+            'version': 8,
+            'sources': {
+                'osm-tiles': {
+                    'type': 'raster',
+                    'tiles': [ 'https://tile.openstreetmap.org/{z}/{x}/{y}.png' ],
+                    'tileSize': 256,
+                    'attribution': '&copy; <a href="https://www.openstreetmap.org/about" target="_blank">OpenStreetMap</a>'
+                }
+            },
+            'layers': [
+                {
+                    'id': 'osm-tiles',
+                    'type': 'raster',
+                    'source': 'osm-tiles',
+                    'minzoom': 0,
+                    'maxzoom': 19
+                }
+            ]
+        },
+        center: center, // starting position
+        zoom: 2 // starting zoom
+    });
+
+    map.on('load', () => {
+        // Create marker element from SVG template.
+        const el = maplibregl.SvgTemplateManager.getElement('marker-arrow', 'AB', 'red', 'pink');
+
+        // Add marker to map
+        marker = new maplibregl.Marker({
+            element: el,
+            anchor: 'bottom'
+        }).setLngLat(center).addTo(map);
+    });
+
+    function updateMarker() {
+        //Get a random color.
+        const color = '#' + Math.floor(Math.random()*16777215).toString(16);
+
+        //Create a new marker element from SVG template. If desired, a completely new template could be used.
+        const el = maplibregl.SvgTemplateManager.getElement('marker-arrow', 'AB', color, 'pink');
+
+        //Replace the inner HTML of the marker with the new SVG template.
+        marker.getElement().innerHTML = el.innerHTML;
+    }
+</script>
+</body>
+</html>

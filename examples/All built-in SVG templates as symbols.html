@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>All built-in SVG templates as symbols</title>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css' />
+    <script src='https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js'></script>
+
+    <script src="../dist/maplibre-gl-svg.js"></script>
+
+    <style>
+        body { margin: 0; padding: 0; }
+        html, body { height: 100%; }
+        #map { position: relative; width:100%; height:100%; }
+        fieldset { position: absolute; top: 10px; left: 10px; width: 300px;z-index: 1; background-color: white;}
+        legend {background-color: white;border-radius: 5px;border:1px solid #000;}
+    </style>
+</head>
+<body>
+<div id="map"></div>
+
+<fieldset>
+    <legend>All built-in SVG templates as symbols</legend>
+    This sample shows all the built-in icon templates rendered on a symbol layer. The primary color is teal and the secondary color is white.
+</fieldset>
+
+<script>
+    const center = [20, -10];
+    var marker, svgManager;
+    var datasource = {
+        'type': 'FeatureCollection',
+        'features': []
+    };
+    var imagePromises = [];
+
+    const map = new maplibregl.Map({
+        container: 'map',
+        center: center,
+        zoom: 4,
+        style: {
+            'version': 8,
+            'sources': {
+            },
+            'layers': [
+                {
+                    "id": "background",
+                    "type": "background",
+                    "paint": {
+                        "background-color": "gray"
+                    }
+                }
+            ],
+            "glyphs": "http://fonts.openmaptiles.org/{fontstack}/{range}.pbf",
+        },
+    });
+
+    map.on('load', () => {
+        
+        //Create a new instance of the SVG manager.
+        svgManager = new maplibregl.SvgManager(map);
+
+        //Get all image templates available in the map control. 
+        var keys = maplibregl.SvgTemplateManager.getAllTemplateNames();
+
+        //Create a grid of points, each using a different SVG template.
+        var cols = 6;
+        var rows = Math.ceil(keys.length / cols);
+
+        for (var row = 0; row < rows; row++) {
+            for (var col = 0; col < cols; col++) {
+                var idx = cols * row + col;
+                if (idx < keys.length) {
+                    createIcon(keys[idx], row, col);
+                }
+            }
+        }
+
+        //Load the SVG template promises all at once.
+        Promise.all(imagePromises).then(() => {
+
+            //Add a layer to display the points.
+            map.addLayer({
+                'id': 'points-layer',
+                'type': 'symbol',
+                'source': {
+                    'type': 'geojson',
+                    'data': datasource
+                },
+                'layout': {
+                    'icon-image': ['get', 'imageId'],
+                    'icon-allow-overlap': true,
+                    'icon-ignore-placement': true,
+                    'text-field': ['get', 'imageId'],
+                    'text-offset': [0, 2],
+                    'text-allow-overlap': true,
+                    'text-ignore-placement': true,
+                    'text-font': ['Open Sans Semibold'],
+                    'text-size': 12,
+                    'text-anchor': 'top'
+                }
+            });
+        });
+    });
+
+    function createIcon(id, row, col) {
+        //Capture the promise to create the image from the template.
+        imagePromises.push(svgManager.createFromTemplate(id, id, 'teal', '#fff', 1));
+
+        //Add a point to the data source to render the image.
+        datasource.features.push({
+            'type': 'Feature',
+            'properties': {
+                'imageId': id
+            },
+            'geometry': {
+                'type': 'Point',
+                'coordinates': [8 * col, -3.5 * row]
+            }
+        });
+    }
+</script>
+</body>
+</html>

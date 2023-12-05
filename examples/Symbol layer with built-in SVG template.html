@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Symbol layer with built-in SVG template</title>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css' />
+    <script src='https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js'></script>
+
+    <script src="../dist/maplibre-gl-svg.js"></script>
+
+    <style>
+        body { margin: 0; padding: 0; }
+        html, body { height: 100%; }
+        #map { position: relative; width:100%; height:100%; }
+        fieldset { position: absolute; top: 10px; left: 10px; width: 300px;z-index: 1; background-color: white;}
+        legend {background-color: white;border-radius: 5px;border:1px solid #000;}
+    </style>
+</head>
+<body>
+<div id="map"></div>
+
+<fieldset>
+    <legend>Symbol layer with built-in SVG template</legend>
+    This sample shows how to use an SVG template as an icon in a symbol layer. 
+</fieldset>
+
+<script>
+    var marker, svgManager;
+
+    const map = new maplibregl.Map({
+        container: 'map',
+        style: {
+            'version': 8,
+            'sources': {
+                'osm-tiles': {
+                    'type': 'raster',
+                    'tiles': [ 'https://tile.openstreetmap.org/{z}/{x}/{y}.png' ],
+                    'tileSize': 256,
+                    'attribution': '&copy; <a href="https://www.openstreetmap.org/about" target="_blank">OpenStreetMap</a>'
+                }
+            },
+            'layers': [
+                {
+                    'id': 'osm-tiles',
+                    'type': 'raster',
+                    'source': 'osm-tiles',
+                    'minzoom': 0,
+                    'maxzoom': 19
+                }
+            ]
+        },
+        zoom: 2
+    });
+
+    map.on('load', () => {
+        //Create a new instance of the SVG manager.
+        svgManager = new maplibregl.SvgManager(map);
+
+        //Load an SVG templated icon into the map.
+        svgManager.createFromTemplate('myTemplatedImage', 'marker-flat', 'teal', '#fff').then(() => {
+
+            //Add a layer to display a filled polygon.
+            map.addLayer({
+                'id': 'symbol-layer',
+                'type': 'symbol',
+                'source': {
+                    'type': 'geojson',
+                    'data': {
+                        'type': 'FeatureCollection',
+                        'features': [
+                            {
+                                'type': 'Feature',
+                                'properties': {
+                                },
+                                'geometry': {
+                                    'type': 'Point',
+                                    'coordinates': [0,0]
+                                }
+                            }
+                        ]
+                    }
+                },
+                'layout': {            
+                    //Reference the templated icon.        
+                    'icon-image': 'myTemplatedImage'
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

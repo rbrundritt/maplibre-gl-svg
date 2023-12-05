@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SVG template options</title>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css' />
+    <script src='https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js'></script>
+
+    <script src="../dist/maplibre-gl-svg.js"></script>
+
+    <style>
+        body { margin: 0; padding: 0; }
+        html, body { height: 100%; }
+        #map { position: relative; width:100%; height:100%; }
+        fieldset { position: absolute; top: 10px; left: 10px; width: 300px;z-index: 1; background-color: white;}
+        legend {background-color: white;border-radius: 5px;border:1px solid #000;}
+    </style>
+</head>
+<body>
+<div id="map"></div>
+
+<fieldset>
+    <legend>SVG template options</legend>
+    This sample shows how the icon template options effect the rendering of built-in SVG templates.
+
+    <div>
+        <table>
+            <tr title="The method in which to use the images.">
+                <td>Layout:</td>
+                <td>
+                    <input type="radio" name="layout" checked="checked" onclick="update('symbol')">Symbol icon<br>
+                    <input type="radio" name="layout" onclick="update('line')">Line symbols<br>
+                    <input type="radio" name="layout" onclick="update('polygon')">Polygon fill
+                </td>
+            </tr>
+            <tr title="The name of the template to use.">
+                <td>Template Name:</td>
+                <td>
+                    <select id="TemplateNames" onchange="update()"></select>
+                </td>
+            </tr>
+            <tr title="The primary color for the template.">
+                <td>Primary Color:</td>
+                <td>
+                    <input type="color" value="#1A73AA" id="PrimaryColor" onchange="update()" />
+                    <input type="checkbox" id="PrimaryColorTransparent" onclick="update()" />Transparent
+                </td>
+            </tr>
+            <tr title="The secondary color for the template.">
+                <td>Secondary Color:</td>
+                <td>
+                    <input type="color" value="#ffffff" id="SecondaryColor" onchange="update()" />
+                    <input type="checkbox" id="SecondaryColorTransparent" onclick="update()" />Transparent
+                </td>
+            </tr>
+            <tr title="The amount to scale the icon template by.">
+                <td>Scale:</td>
+                <td>
+                    <form oninput="o.value=Scale.value">
+                        <input type="range" id="Scale" value="1" min="0.1" max="5" step="0.1" oninput="update()" onchange="update()" />
+                        <output name="o" for="Scale">1</output>
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </div>
+</fieldset>
+
+<script>
+    var marker, svgManager, layout = 'symbol';
+
+    var geojson = {
+        'type': 'FeatureCollection',
+        'features': [
+            {
+                'type': 'Feature',
+                'properties': {
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [0,0]
+                }
+            }
+        ]
+    };
+
+    const map = new maplibregl.Map({
+        container: 'map',
+        style: {
+            'version': 8,
+            'sources': {
+                'osm-tiles': {
+                    'type': 'raster',
+                    'tiles': [ 'https://tile.openstreetmap.org/{z}/{x}/{y}.png' ],
+                    'tileSize': 256,
+                    'attribution': '&copy; <a href="https://www.openstreetmap.org/about" target="_blank">OpenStreetMap</a>'
+                }
+            },
+            'layers': [
+                {
+                    'id': 'osm-tiles',
+                    'type': 'raster',
+                    'source': 'osm-tiles',
+                    'minzoom': 0,
+                    'maxzoom': 19
+                }
+            ]
+        },
+        zoom: 2
+    });
+
+    //Load template names into UI.
+    var templateNames = maplibregl.SvgTemplateManager.getAllTemplateNames();
+    var html = [];
+    for (var i = 0; i < templateNames.length; i++) {
+        if (i === 0) {
+            html.push('<option value="', templateNames[i], '" selected="selected">', templateNames[i], '</option>');
+        } else {
+            html.push('<option value="', templateNames[i], '">', templateNames[i], '</option>');
+        }
+    }
+    document.getElementById('TemplateNames').innerHTML = html.join('');
+
+    map.on('load', () => {
+        // Create a new instance of the SVG manager.
+        svgManager = new maplibregl.SvgManager(map);
+
+        // Create a source.
+        map.addSource('datasource', {
+            'type': 'geojson',
+            'data': geojson
+        });
+
+        // Add a layer to display a filled polygon.
+        map.addLayer({
+            'id': 'polygon-layer',
+            'type': 'fill',
+            'source': 'datasource',
+            'paint': {
+                // Apply the fill pattern.
+                'fill-pattern': 'myTemplatedImage',
+                'fill-opacity': 1
+            },
+            'filter': ['==', ['geometry-type'], 'Polygon']
+        });
+
+        // Add a line layer for displaying the line.
+        map.addLayer({
+            'id': 'line-layer',
+            'type': 'line',
+            'source': 'datasource',
+            'paint': {
+                // Apply the fill pattern.
+                'line-width': 5,
+                'line-color': 'Purple'
+            },
+            'filter': ['==', ['geometry-type'], 'LineString']
+        });
+
+        //Add a layer for symbols along the line.
+        map.addLayer({
+            'id': 'line-symbols',
+            'type': 'symbol',
+            'source': 'datasource',
+            'layout': {            
+                //Reference the templated icon.        
+                'icon-image': 'myTemplatedImage',
+                'icon-allow-overlap': true,
+                'symbol-placement': 'line',
+                'symbol-spacing': 100,
+                'icon-anchor': 'center'
+            },
+            'filter': ['==', ['geometry-type'], 'LineString']
+        });
+
+         //Add a layer to display points as symbols.
+         map.addLayer({
+            'id': 'point-symbols',
+            'type': 'symbol',
+            'source': 'datasource',
+            'layout': {            
+                //Reference the templated icon.        
+                'icon-image': 'myTemplatedImage',
+                'icon-allow-overlap': true,
+                'icon-anchor': 'center'
+            },
+            'filter': ['==', ['geometry-type'], 'Point']
+        });
+
+        update();
+    });
+
+    function update(type) {
+        if (type) {
+            layout = type;
+        }
+
+        //Get the primary and secondary color, and scale settings.
+        var color = document.getElementById('PrimaryColor').value;
+        var colorTransparent = document.getElementById('PrimaryColorTransparent').checked;
+
+        if (colorTransparent) {
+            color = 'transparent';
+        }
+
+        var sColor = document.getElementById('SecondaryColor').value;
+        var sColorTransparent = document.getElementById('SecondaryColorTransparent').checked;
+
+        if (sColorTransparent) {
+            sColor = 'transparent';
+        }
+
+        var scale = parseFloat(document.getElementById('Scale').value);
+
+        //Get the template name.
+        var templateName = getSelectValue('TemplateNames');
+
+        // Remove the previously loaded template.   
+        // Note that a warning will appear in the console about a missing image since we removed it temporarily.     
+        if(svgManager.hasImage('myTemplatedImage')) {
+            svgManager.remove('myTemplatedImage');
+        }
+
+        // Alternatively, since there is only one image, you can use svgManager.clear();
+
+        // Create the new image from a template.
+        svgManager.createFromTemplate('myTemplatedImage', templateName, color, sColor, scale).then(() => {
+            
+            // Change the geometry as needed.
+            // This will also trigger a redraw of the map.
+            switch (layout) {
+                case 'symbol':
+                    geojson.features[0].geometry = {
+                        'type': 'Point',
+                        'coordinates': [0,0]
+                    };
+                    break;
+                case 'line':
+                    geojson.features[0].geometry = {
+                        'type': 'LineString',
+                        'coordinates': [[-50, -20], [0, 40], [50, -20]]
+                    };
+                    break;
+                case 'polygon':
+                    geojson.features[0].geometry = {
+                        'type': 'Polygon',
+                        'coordinates': [[[-50, -20], [0, 40], [50, -20], [-50, -20]]]
+                    };
+                    break;
+            }
+
+            // Update the source in the map
+            map.getSource('datasource').setData(geojson);
+        });
+    }
+
+    function getSelectValue(id) {
+        var elm = document.getElementById(id);
+        return elm.options[elm.selectedIndex].value;
+    }
+</script>
+</body>
+</html>
