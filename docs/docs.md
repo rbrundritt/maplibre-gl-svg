@@ -8,6 +8,17 @@ Images can be used with HTML markers and various layers within MapLibre:
 
 Be sure to check out the [examples page](https://rbrundritt.github.io/maplibre-gl-svg/index.html).
 
+**Content**
+
+- [How to the use the MapLibre GL SVG Plugin](#how-to-the-use-the-maplibre-gl-svg-plugin)
+  - [Getting started](#getting-started)
+  - [Use the SvgTemplateManager](#use-the-svgtemplatemanager)
+  - [Use an SVG template with an HTML marker](#use-an-svg-template-with-an-html-marker)
+  - [Use an SVG along a lines path](#use-an-svg-along-a-lines-path)
+  - [Use an SVG with a fill layer](#use-an-svg-with-a-fill-layer)
+  - [Create a custom SVG template](#create-a-custom-svg-template)
+  - [List of image templates](#list-of-image-templates)
+
 ## Getting started
 
 Download the project and copy the `maplibre-gl-svg` JavaScript file from the `dist` folder into your project.
