@@ -15,7 +15,7 @@ A [maplibre-gl-js](https://maplibre.org/maplibre-gl-js/docs/) plugin that adds s
 
 **Known Limitations**
 
-- SVG's are converted into a data URI, and loaded as a static image into the maps image sprite. This means animations and CSS classes are not supported. All CSS styles should be embedded within the SVG.
+- When loaded into the maps image sprite SVG's are converted into a data URI, and loaded as a static image into the maps image sprite. This means animations and CSS classes are not supported. All CSS styles should be embedded within the SVG. SVG's used with HTML markers will support CSS classes and animations as usual.
   
 ## License
 
